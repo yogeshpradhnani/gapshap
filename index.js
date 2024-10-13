@@ -1,13 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const http = require('http');
+const path = require('path');
 require('dotenv').config();
 const app = express();
 const server = http.createServer(app);
 
 // Enable CORS for all routes
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'public'))); 
+app.use(express.static(path.join(__dirname, '/public'))); 
 // Your Socket.IO setup
 const io = require('socket.io')(server);
 
