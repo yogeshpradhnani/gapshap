@@ -1,4 +1,4 @@
-const socket = io.connect('http://localhost:8000', { transports: ['websocket', 'polling'] });
+const socket = io.connect('http://0.0.0.0:8000', { transports: ['websocket', 'polling'] });
 
 
 const form = document.getElementById('send');

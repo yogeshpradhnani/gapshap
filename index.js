@@ -17,7 +17,7 @@ const PORT =  8000; // Port to listen on, defaults to 8000 if not specified in e
 
 // ... other server setup
 app.get('/', (req, res) => {
-    res.render(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 
