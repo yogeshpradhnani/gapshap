@@ -15,6 +15,10 @@ const io = require('socket.io')(server);
 const PORT =  8000; // Port to listen on, defaults to 8000 if not specified in environment variables.  Note that this is a placeholder and should be replaced with your desired port.  Also, make sure to set up your server to listen on this port.  For example, using Node.js with Express: `app.listen(PORT, () => console.log('Server listening on port ${PORT}'));
 
 // ... other server setup
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 
 server.listen(PORT, () => {
     console.log('Server listening on port 8000');
