@@ -8,6 +8,9 @@ const server = http.createServer(app);
 
 // Enable CORS for all routes
 app.use(cors());
+app.use(cors({
+    origin: 'https://gapshap-1.onrender.com/' // Allow your frontend URL
+}));
 app.use(express.static(path.join(__dirname, 'public'))); 
 app.set('view engine', 'ejs');
 // Your Socket.IO setup
