@@ -9,6 +9,7 @@ const server = http.createServer(app);
 // Enable CORS for all routes
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public'))); 
+app.set('view engine', 'ejs');
 // Your Socket.IO setup
 const io = require('socket.io')(server);
 
@@ -16,7 +17,7 @@ const PORT =  8000; // Port to listen on, defaults to 8000 if not specified in e
 
 // ... other server setup
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.render(path.join(__dirname, 'public', 'index.html'));
 });
 
 
